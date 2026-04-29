@@ -38,8 +38,9 @@ class EDFRecordingExtractor(NeoBaseRecordingExtractor):
         stream_name=None,
         all_annotations: bool = False,
         use_names_as_ids: bool = False,
+        read_annotations: bool = True,
     ):
-        neo_kwargs = {"filename": str(file_path)}
+        neo_kwargs = {"filename": str(file_path), "read_annotations": read_annotations}
         NeoBaseRecordingExtractor.__init__(
             self,
             stream_id=stream_id,
